@@ -1,0 +1,16 @@
+---
+- name: Using Azure collection
+  hosts: localhost
+  tasks:
+      
+  - name: Create VM with defaults
+    azure_rm_virtualmachine:
+      resource_group: myResourceGroup
+      name: testvm10
+      admin_username: "{{ username }}"
+      admin_password: "{{ password }}"
+      image:
+        offer: CentOS
+        publisher: OpenLogic
+        sku: '7.1'
+        version: latest
