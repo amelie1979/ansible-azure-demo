@@ -14,3 +14,4 @@
         publisher: RedHat
         sku: '7-LVM'
         version: latest
+      vm_size: Standard_D4_v2
