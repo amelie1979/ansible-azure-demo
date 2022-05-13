@@ -10,7 +10,7 @@
       admin_username: "{{ username }}"
       admin_password: "{{ password }}"
       image:
-        offer: CentOS 8.3 Free
-        publisher: Cognosys
-        sku: '8.3'
+        offer: RHEL
+        publisher: RedHat
+        sku: '7-LVM'
         version: latest
