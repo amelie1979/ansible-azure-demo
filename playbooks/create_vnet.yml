@@ -1,0 +1,10 @@
+---
+- name: Using Azure collection
+  hosts: localhost
+  tasks:
+        
+  - name: Create virtual network
+    azure.azcollection.azure_rm_virtualnetwork:
+      resource_group: ansiblelab4amelie
+      name: testvn001-ansible
+      address_prefixes: "10.10.0.0/24"
