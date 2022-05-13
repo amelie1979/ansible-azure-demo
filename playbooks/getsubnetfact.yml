@@ -1,0 +1,10 @@
+---
+- name: Using Azure collection
+  hosts: localhost
+  tasks:
+        
+  - name: Get facts of specific subnet
+    azure_rm_subnet_info:
+      resource_group: ansiblelab4amelie
+      virtual_network_name: myVirtualNetwork
+      name: dafault
