@@ -10,7 +10,7 @@
       admin_username: "{{ username }}"
       admin_password: "{{ password }}"
       image:
-        offer: CentOS
-        publisher: OpenLogic
-        sku: '7.1'
+        offer: CentOS 8.3 Free
+        publisher: Cognosys
+        sku: '8.3'
         version: latest
