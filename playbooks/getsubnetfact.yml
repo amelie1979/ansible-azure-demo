@@ -7,5 +7,5 @@
     azure_rm_subnet_info:
       resource_group: ansiblelab4amelie
       virtual_network_name: myVirtualNetwork
-      name: testvn001-ansible
+      name: default
 
