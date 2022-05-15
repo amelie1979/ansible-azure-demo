@@ -13,7 +13,7 @@
               protocol: Tcp
               destination_port_range: 22
               access: Deny
-              priority: 100
+              priority: 103
               direction: Inbound
             - name: 'AllowSSH'
               protocol: Tcp
