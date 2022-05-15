@@ -5,7 +5,7 @@
         
   - name: Create virtual network
     azure_rm_virtualnetwork:
-      resource_group: {{ myResourceGroup }}
-      name: {{ myvnetname }}
+      resource_group: "{{ myResourceGroup }}"
+      name: "{{ myvnetname }}"
       address_prefixes: "{{ subnet }}/{{ mask }}"
     register: address_prefixes
