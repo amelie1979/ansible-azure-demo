@@ -9,12 +9,6 @@
         name: "{{ mysecgroup }}"
         purge_rules: yes
         rules:
-            - name: DenySSH
-              protocol: Tcp
-              destination_port_range: 22
-              access: Deny
-              priority: 103
-              direction: Inbound
             - name: 'AllowSSH'
               protocol: Tcp
               source_address_prefix:
