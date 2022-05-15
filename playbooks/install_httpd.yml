@@ -1,7 +1,7 @@
 ---
 - name: install and start apache
   hosts: all
-  become: true
+  become: yes
 
   tasks:
   - name: httpd package is present
