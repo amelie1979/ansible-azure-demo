@@ -13,16 +13,15 @@
               protocol: Tcp
               source_address_prefix:
                 - '70.52.103.223'
-                - '10.120.1.0/24'
+                - '10.0.0.0/16'
+                - '20.228.133.0/24'
               destination_port_range: 22
               access: Allow
               priority: 101
               direction: Inbound
             - name: 'AllowMultiplePorts'
               protocol: Tcp
-              source_address_prefix:
-                - '70.52.103.223'
-                - '10.120.1.0/24'
+              source_address_prefix: '*'
               destination_port_range:
                 - 80
                 - 443
