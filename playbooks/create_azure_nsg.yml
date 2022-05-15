@@ -20,7 +20,6 @@
               source_address_prefix:
                 - '70.52.103.223'
                 - '10.120.1.0/24'
-                - 'bras-base-stjnpq9312w-grc-31-70-52-103-223.dsl.bell.ca.'
                 - 'bras-base-stjnpq9312w-grc-31-70-52-103-223.dsl.bell.ca'
               destination_port_range: 22
               access: Allow
@@ -31,7 +30,7 @@
               source_address_prefix:
                 - '70.52.103.223'
                 - '10.120.1.0/24'
-                - 'bras-base-stjnpq9312w-grc-31-70-52-103-223.dsl.bell.ca.'
+                - 'bras-base-stjnpq9312w-grc-31-70-52-103-223.dsl.bell.ca'
               destination_port_range:
                 - 80
                 - 443
