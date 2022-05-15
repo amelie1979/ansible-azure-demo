@@ -1,0 +1,15 @@
+---
+- name: Manage subnet into vNet
+  hosts: localhost
+  tasks:
+        
+  - name: Add Subnet to existing virtual network
+    azure_rm_subnet:
+      resource_group: "{{ myResourceGroup }}"
+      virtual_network_name : "{{ myvnetname }}"
+      name: "{{ mysubnetname }}"
+      address_prefixes_cidr: "{{ subnet }}/{{ mask }}"
+    register: address_prefixes_cidr
+
+  - debug:
+      var: address_prefixes_cidr
