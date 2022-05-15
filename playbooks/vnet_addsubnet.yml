@@ -5,7 +5,7 @@
         
   - name: Modify existing virtual network adress space
     azure_rm_virtualnetwork:
-      resource_group: ansiblelab4amelie
+      resource_group: {{ myResourceGroup }}
       name: testvn001-ansible
       address_prefixes: "{{ subnet }}/{{ mask }}"
     register: address_prefixes

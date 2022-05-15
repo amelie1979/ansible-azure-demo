@@ -5,6 +5,6 @@
         
   - name: Create virtual network
     azure_rm_virtualnetwork:
-      resource_group: ansiblelab4amelie
+      resource_group: {{ myResourceGroup }}
       name: testvn001-ansible
       address_prefixes: "10.20.0.0/24"

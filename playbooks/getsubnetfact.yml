@@ -5,7 +5,7 @@
         
   - name: Get facts of specific subnet
     azure_rm_subnet_info:
-      resource_group: ansiblelab4amelie
+      resource_group: {{ myResourceGroup }}
       virtual_network_name: myVirtualNetwork
       name: default
 

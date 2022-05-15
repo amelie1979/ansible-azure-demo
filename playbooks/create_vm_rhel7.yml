@@ -5,7 +5,7 @@
       
   - name: Create VM with defaults
     azure_rm_virtualmachine:
-      resource_group: ansiblelab4amelie
+      resource_group: {{ myResourceGroup }}
       name: testvm10
       admin_username: "{{ username }}"
       admin_password: "{{ password }}"
