@@ -3,7 +3,7 @@
   hosts: localhost
   tasks:
         
-  - name: Create virtual network
+  - name: Destroy a virtual network
     azure_rm_virtualnetwork:
       resource_group: "{{ myResourceGroup }}"
       name: "{{ myvnetname }}"
