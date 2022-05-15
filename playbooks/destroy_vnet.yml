@@ -1,0 +1,11 @@
+---
+- name: Using Azure collection Virtual network
+  hosts: localhost
+  tasks:
+        
+  - name: Create virtual network
+    azure_rm_virtualnetwork:
+      resource_group: "{{ myResourceGroup }}"
+      name: "{{ myvnetname }}"
+      state: absent
+    register: absent
