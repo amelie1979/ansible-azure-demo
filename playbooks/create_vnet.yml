@@ -1,10 +1,11 @@
 ---
-- name: Using Azure collection
+- name: Using Azure collection Virtual network
   hosts: localhost
   tasks:
         
   - name: Create virtual network
     azure_rm_virtualnetwork:
       resource_group: {{ myResourceGroup }}
-      name: testvn001-ansible
-      address_prefixes: "10.20.0.0/24"
+      name: {{ myvnetname }}
+      address_prefixes: "{{ subnet }}/{{ mask }}"
+    register: address_prefixes
