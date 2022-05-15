@@ -8,4 +8,3 @@
       resource_group: "{{ myResourceGroup }}"
       name: "{{ myvnetname }}"
       state: absent
-    register: absent
