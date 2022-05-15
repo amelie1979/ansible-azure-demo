@@ -6,7 +6,7 @@
   - name: Create VM with defaults
     azure_rm_virtualmachine:
       resource_group: "{{ myResourceGroup }}"
-      name: testvm10
+      name: "{{ vm_name }}"
       admin_username: "{{ username }}"
       admin_password: "{{ password }}"
       image:

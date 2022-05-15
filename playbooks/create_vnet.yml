@@ -9,3 +9,6 @@
       name: "{{ myvnetname }}"
       address_prefixes: "{{ subnet }}/{{ mask }}"
     register: address_prefixes
+
+  - debug:
+      var: address_prefixes
