@@ -9,6 +9,8 @@
       name: "{{ vm_name }}"
       admin_username: "{{ username }}"
       admin_password: "{{ password }}"
+      virtual_network_name: "{{ myvnetname }}"
+      subnet_name: "{{ mysubnetname }}"
       image:
         offer: RHEL
         publisher: RedHat
