@@ -5,7 +5,7 @@
     
   - name: Remove a VM and all resources that were autocreated
     azure_rm_virtualmachine:
-      resource_group: myResourceGroup
+      resource_group: "{{ myResourceGroup }}"
       name: "{{ vm_name }}"
       remove_on_absent: all_autocreated
       state: absent
