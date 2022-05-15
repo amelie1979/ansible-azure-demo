@@ -1,0 +1,13 @@
+---
+- name: Using Azure collection
+  hosts: localhost
+  tasks:
+        
+  - name: Create virtual network
+    azure_rm_virtualnetwork:
+      resource_group: ansiblelab4amelie
+      name: testvn001-ansible
+      address_prefixes: "{{ subnet }}/{{ prefix }}"
+      register: address_prefixes
+    debug:
+      var: address_prefixes
