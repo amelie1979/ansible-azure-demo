@@ -1,13 +1,14 @@
 ---
-- name: Using Azure collection
+- name: Manage vnet address space
   hosts: localhost
   tasks:
         
-  - name: Create virtual network
+  - name: Modify existing virtual network adress space
     azure_rm_virtualnetwork:
       resource_group: ansiblelab4amelie
       name: testvn001-ansible
-      address_prefixes: "{{ subnet }}/{{ prefix }}"
-      register: address_prefixes
-    debug:
+      address_prefixes: "{{ subnet }}/{{ mask }}"
+    register: address_prefixes
+
+  - debug:
       var: address_prefixes
