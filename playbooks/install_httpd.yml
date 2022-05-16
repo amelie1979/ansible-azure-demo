@@ -20,22 +20,30 @@
       name: httpd
       state: started
 
+  - name: firewalld package is present
+    yum:
+      name: httpd
+      state: latest
+      
+  - name: firewalld is started
+    service:
+      name: firewalld
+      state: started
+
   - name: permit traffic in default zone for https service
     firewalld:
       service: https
       permanent: yes
+      immediate: yes
       state: enabled
-    notify: Restart firewalld        
+      
 
   - name: permit traffic in default zone for http service
     firewalld:
       service: http
       permanent: yes
+      immediate: yes
       state: enabled
-    notify: Restart firewalld
 
-  handlers:
-  - name: Restart firewalld
-    ansible.builtin.service:
-      name: firewalld
-      state: restarted        
+
+  
