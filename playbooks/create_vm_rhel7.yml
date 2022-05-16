@@ -11,9 +11,13 @@
       admin_password: "{{ password }}"
       virtual_network_name: "{{ myvnetname }}"
       subnet_name: "{{ mysubnetname }}"
+      open_ports:
+        - '22'
+        - '80'
+        - '443'
       image:
         offer: RHEL
         publisher: RedHat
         sku: '7-LVM'
         version: latest
-      vm_size: Standard_D4_v2      
+      vm_size: Standard_B1s      
