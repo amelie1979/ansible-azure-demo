@@ -11,6 +11,9 @@
       admin_password: "{{ password }}"
       virtual_network_name: "{{ myvnetname }}"
       subnet_name: "{{ mysubnetname }}"
+      open_ports: 
+        - 80
+        - 443
       image:
         offer: RHEL
         publisher: RedHat
