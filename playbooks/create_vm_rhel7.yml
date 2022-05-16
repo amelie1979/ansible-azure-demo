@@ -12,9 +12,9 @@
       virtual_network_name: "{{ myvnetname }}"
       subnet_name: "{{ mysubnetname }}"
       open_ports:
-        - 22 
-        - 80
-        - 443
+        - '22'
+        - '80'
+        - '443'
       image:
         offer: RHEL
         publisher: RedHat
