@@ -1,12 +1,12 @@
 ---
-- name: Manage subnet into vNet
+- name: Attach HTTP NSG to existing subnet
   hosts: localhost
   tasks:
         
   - name: Attach NSG to existing  subnet
     azure_rm_subnet:
-      resource_group: ansiblelab4amelie
-      virtual_network_name : dmz
-      name: httpapp
+      resource_group: "{{ myResourceGroup }}"
+      virtual_network_name: "{{ myvnetname }}"
+      name: "{{ mysubnetname }}"
       security_group:
-        name: httpd-nsg-app1
+        name: "{{ mysecgroup }}"
