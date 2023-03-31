@@ -7,8 +7,8 @@
     azure_rm_virtualnetwork:
       resource_group: "{{ myResourceGroup }}"
       name: "{{ myvnetname }}"
-      address_prefixes: "{{ vnet_subnet }}/{{vnet_ mask }}"
-    register: address_prefixes
+      address_prefixes_cidr: "{{ vnet_subnet }}/{{vnet_ mask }}"
+    register: address_prefixes_cidr
 
   - debug:
-      var: address_prefixes
+      var: address_prefixes_cidr
