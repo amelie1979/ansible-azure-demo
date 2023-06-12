@@ -3,8 +3,6 @@ plugin: azure.azcollection.azure_rm
 auth_source: cli
 include_vm_resource_groups:
 - openenv-kmjzz-2
-include_vmss_resource_groups:
-- '*'
 conditional_groups:
   all_the_hosts: true
   web: "'web' in name"
@@ -15,12 +13,9 @@ hostvar_expressions:
   ansible_host: (public_dns_hostnames + public_ipv4_addresses) | first
 
 hostnames:
-  - tags.vm_name
-  - default  # special var that uses the default hashed name
+  - name: vm_name
 keyed_groups:
   - prefix: tag
     key: tags
   - prefix: azure_loc
     key: location
-  - prefix: some_tag
-    key: tags.sometag | default('none')
