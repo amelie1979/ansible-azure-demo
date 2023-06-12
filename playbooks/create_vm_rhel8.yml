@@ -1,0 +1,23 @@
+---
+- name: Using Azure collection
+  hosts: localhost
+  tasks:
+      
+  - name: Create VM with defaults
+    azure_rm_virtualmachine:
+      resource_group: "{{ myResourceGroup }}"
+      name: "{{ vm_name }}"
+      admin_username: "{{ username }}"
+      admin_password: "{{ password }}"
+      virtual_network_name: "{{ myvnetname }}"
+      subnet_name: "{{ mysubnetname }}"
+      open_ports:
+        - '22'
+        - '80'
+        - '443'
+      image:
+        offer: RHEL
+        publisher: RedHat
+        sku: '8-LVM'
+        version: latest
+      vm_size: Standard_B1s      
