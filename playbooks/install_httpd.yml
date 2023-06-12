@@ -6,7 +6,7 @@
 
   tasks:
   - name: httpd package is present
-    yum:
+    ansible.builtin.yum:
       name: httpd
       state: latest
 
