@@ -1,11 +1,11 @@
 ---
 - name: Test WEB Site
-  hosts: web
+  hosts: localhost
   gather_facts: true
   tasks:
     - name: Check that a page returns successfully but fail if the word Demo is not in the page contents
       ansible.builtin.uri:
-        url: http://{{" public_ipv4_addresses "}}
+        url: http://0.0.0.0
         return_content: true
       register: this
       failed_when: "'Demo' not in this.content"
