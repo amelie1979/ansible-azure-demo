@@ -1,0 +1,30 @@
+---
+- name: Populate Azure Inventory web Group
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  
+  tasks:
+    
+  - name: Add group
+    tower_group:
+      name: web
+      description: "Linux Web Server"
+      inventory: "Azure VM"
+      state: present
+
+
+  - name: Add host
+    tower_host:
+      name: "{{ vm_name }}"
+      inventory: "Azure VM"
+      state: present
+
+
+  - name: Add host to group
+    tower_group:
+      name: web
+      inventory: "Azure VM"
+      state: present
+      hosts:
+        - "{{ vm_name }}"
