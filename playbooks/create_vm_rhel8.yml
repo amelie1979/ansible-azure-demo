@@ -23,3 +23,10 @@
         sku: '8-LVM'
         version: latest
       vm_size: Standard_B1s      
+
+  - name: Register as user credentials and auto-subscribe.
+    redhat_subscription:
+      state: present
+      username: amelie.cossette.redhat
+      password: J0hanne7171
+      auto_attach: true      
