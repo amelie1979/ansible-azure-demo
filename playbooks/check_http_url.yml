@@ -8,4 +8,4 @@
         url: http://{{" public_ipv4_addresses "}}
         return_content: true
       register: this
-      failed_when: this is failed or "'Demo' not in this.content"
+      failed_when: "'Demo' not in this.content"
