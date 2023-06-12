@@ -1,0 +1,21 @@
+plugin: azure.azcollection.azure_rm
+auth_source: cli
+plain_host_names: yes
+include_vm_resource_groups:
+- openenv-kmjzz-2
+conditional_groups:
+  all_the_hosts: true
+  web: "'web' in name"
+
+#hostvar_expressions:
+#  my_host_var:
+#  some_statically_valued_var: "'staticvalue'"
+#  ansible_host: (public_dns_hostnames + public_ipv4_addresses) | first
+
+#hostnames:
+#  - name: vm_name
+#keyed_groups:
+#  - prefix: tag
+#    key: tags
+#  - prefix: azure_loc
+#    key: location
