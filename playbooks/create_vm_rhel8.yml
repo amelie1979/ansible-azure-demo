@@ -7,8 +7,10 @@
     azure_rm_virtualmachine:
       resource_group: "{{ myResourceGroup }}"
       name: "{{ vm_name }}"
+      short_hostname: "{{ vm_name }}"      
       admin_username: "{{ username }}"
       admin_password: "{{ password }}"
+      ssh_password_enabled: true
       virtual_network_name: "{{ myvnetname }}"
       subnet_name: "{{ mysubnetname }}"
       open_ports:
