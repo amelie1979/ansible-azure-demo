@@ -1,6 +1,6 @@
 ---
 - name: install and start apache
-  hosts: web
+  hosts: "{{ vm_name }}"
   become: true
   gather_facts: true
 
