@@ -1,6 +1,6 @@
 ---
 - name: Test WEB Site
-  hosts: localhost
+  hosts: web
   gather_facts: true
   tasks:
     - name: Check that a page returns successfully but fail if the word Demo is not in the page contents
