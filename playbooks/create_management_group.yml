@@ -1,0 +1,10 @@
+---
+- name: Create new management group
+  hosts: localhost
+  tasks:
+        
+- name: Create new management group
+  azure_rm_managementgroup:
+    group_id: test
+    type: /providers/Microsoft.Management/managementGroups/
+    name: test
