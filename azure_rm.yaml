@@ -25,7 +25,7 @@ auth_source: cli
 
 # fetches VMs from an explicit list of resource groups instead of default all (- '*')
 include_vm_resource_groups:
-- openenv-kmjzz-2
+- openenv-626nl
 
 
 # fetches VMs from VMSSs in all resource groups (defaults to no VMSS fetch)

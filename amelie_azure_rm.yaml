@@ -1,5 +1,5 @@
 ---
 plugin: azure.azcollection.azure_rm
 include_vm_resource_groups:
-  - openenv-kmjzz-2
+  - openenv-626nl
 auth_source: auto
