@@ -2,3 +2,4 @@
 collections:
   - name: azure.azcollection
   - name: community.general
+  - name: ansible.windows
