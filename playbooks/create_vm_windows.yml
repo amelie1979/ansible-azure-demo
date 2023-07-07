@@ -15,7 +15,7 @@
       virtual_network_name: "{{ myvnetname }}"
       subnet_name: "{{ mysubnetname }}"
       open_ports:
-        - '389'
+        - '3389'
         - '80'
         - '443'
       image:
