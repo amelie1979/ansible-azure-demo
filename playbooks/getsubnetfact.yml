@@ -8,8 +8,8 @@
       name: "{{ mysubnetname }}"
       resource_group: "{{ myResourceGroup }}"
       virtual_network_name: "{{ myvnetname }}"      
-    register: this
+    register: address_prefix_cidr
   - debug:
-      var: this
+      var: address_prefix_cidr
 
 
