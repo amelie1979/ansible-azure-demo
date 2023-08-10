@@ -2,8 +2,10 @@
 - name: Using Azure collection Management Group
   hosts: localhost
   tasks:
-    - name: Get facts for all subscriptions including ones that are disabled.
-      azure.azcollection.azure_rm_subscription_info:
-        id: ede7f891-835c-4128-af5b-0e53848e54e7
+    - name: Get facts for all root management groups for authenticated principal
+      azure_rm_managementgroup_info:  
+#    - name: Get facts for all subscriptions including ones that are disabled.
+#      azure.azcollection.azure_rm_subscription_info:
+#        id: ede7f891-835c-4128-af5b-0e53848e54e7
 
-       
+        
