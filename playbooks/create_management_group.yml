@@ -1,10 +1,57 @@
 ---
-- name: Create new management group
+- name: The playbook validate if the subscription contains ressource
   hosts: localhost
-  
-  tasks:      
-  - name: Create new management group
-    azure_rm_managementgroup:
-      group_id: test
-      type: /providers/Microsoft.Management/managementGroups/
-      name: test
+  tasks:
+    - name: Get facts for one subscription by name
+      azure.azcollection.azure_rm_subscription_info:
+        name: "iag-drm-dev-01"
+      register: subs
+    
+    - name: Prints subscription Info
+      ansible.builtin.debug:
+        var: subs
+    
+    - name: Check if their is resource in the subscription
+      azure.azcollection.azure_rm_resourcegroup_info:
+        subscription_id: '{{ subs.subscriptions[0].subscription_id }}'
+        list_resources: false
+      register: resourceInfo
+    
+    - name: Prints resource Info
+      ansible.builtin.debug:
+        var: resourceInfo
+    
+    - name: Prints the subscription contains resourcehe subscription contains resource
+      ansible.builtin.debug:
+        msg:
+          - "The subscription contains resources"
+      when: resourceInfo.resourcegroups != []
+    
+    - name: Prints the subscription does not contain resource
+      ansible.builtin.debug:
+        msg:
+          - "The subscription does not contain resource"
+      when: resourceInfo.resourcegroups == []
+    
+    - name: Get facts for current logged in user
+      azure.azcollection.azure_rm_account_info:
+      register: user
+    
+    - name: Prints resource user
+      ansible.builtin.debug:
+        var: user
+    
+#    - name: Run basic PowerShell script
+#      ansible.windows.win_powershell:
+#        script: |
+#          echo "Hello World"
+ 
+#    - name: Evaluate the subscription level with the root management group
+#      ansible.windows.win_shell:
+#        script: |
+#          echo "Hello World"
+#          $query = "resourcecontainers | where type == 'microsoft.resources/subscriptions' `
+#          | mv-expand managementGroupParent = properties.managementGroupAncestorsChain `
+#          | where managementGroupParent.name =~ 'PROD' | project name, id | sort by name asc"
+#          $tenantId = (Get-AzContext).Tenant.Id
+#          Search-AzGraph -Query $query -ManagementGroup $tenantId
