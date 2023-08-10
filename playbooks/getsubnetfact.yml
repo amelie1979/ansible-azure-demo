@@ -5,7 +5,11 @@
         
   - name: Get facts of specific subnet
     azure_rm_subnet_info:
-      resource_group: "{{ myResourceGroup }}"
-      virtual_network_name: "{{ myvnetname }}"
       name: "{{ mysubnetname }}"
+      resource_group: "{{ myResourceGroup }}"
+      virtual_network_name: "{{ myvnetname }}"      
+    register: this
+  - debug:
+      var: this
+
 
