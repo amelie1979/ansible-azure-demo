@@ -2,19 +2,8 @@
 - name: Using Azure collection Management Group
   hosts: localhost
   tasks:
-        
-#  - name: Create virtual network
-#    azure_rm_virtualnetwork:
-#      resource_group: "{{ myResourceGroup }}"
-#      name: "{{ myvnetname }}"
-#      address_prefixes_cidr: "{{ vnet_subnet }}/{{ vnet_mask }}"
-#    register: address_prefixes_cidr
+    - name: Get facts for all subscriptions including ones that are disabled.
+      azure_rm_subscription_info:
+        id: ede7f891-835c-4128-af5b-0e53848e54e7
 
-
-  - name: Get facts for all subscriptions, including ones that are disabled.
-    azure_rm_subscription_info:
-      all: True
-
-
-#  - debug:
-#      var: address_prefixes_cidr
+       
