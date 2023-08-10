@@ -3,7 +3,7 @@
   hosts: localhost
   tasks:
     - name: Get facts for all subscriptions including ones that are disabled.
-      azure_rm_subscription_info:
+      azure.azcollection.azure_rm_subscription_info:
         id: ede7f891-835c-4128-af5b-0e53848e54e7
 
        
